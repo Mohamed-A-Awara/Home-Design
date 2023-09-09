@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: ; */
+}
+
+body {
+    overflow: hidden;
+}
+
+.con-sty{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f3f5f8;
+}
+nav{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    justify-content: space-around;
+    z-index: 555;
+    /* background-color: bisque; */
+}
+.logo{
+    display: flex;
+    font-size: 40px;
+    font-weight: 800;
+    color: #3d535f;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+b{
+    font-size: 70px;
+    color: #7f00ff;
+}
+.navItems{
+    display: flex;
+}
+.navItems li {
+    list-style: none;
+    margin: 0 15px;
+}
+.navItems li a {
+    font-size: 25px; 
+    color: #3d535f;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.navItems li:hover a , .links a:hover{
+    color: #7f00ff;
+}
+.links a{
+    font-size: 30px;
+    color: #3d535f;
+    margin: 25px 10px; 
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+}
+/* IMPORTANT */
+.wrapper::before{
+    position: absolute;
+    content: "";
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    left: -12%;
+    top: 20%;
+    background: linear-gradient(45deg,#7f00ff,pink);
+    animation: Object1 6s linear infinite;
+}
+.wrapper::after{
+    position: absolute;
+    content: "";
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    left: 35%;
+    top: 10%;
+    background: linear-gradient(45deg,#7f00ff,pink);
+    animation: Object2 6s linear infinite;
+}
+@keyframes Object1{
+    50%{
+        left: -14%;
+        top: 41%;
+    }
+}
+@keyframes Object2{
+    50%{
+        left: 32%;
+        top: 8%;
+    }
+}
+.cols{
+    width: 50%;
+
+}
+.cols0{
+    z-index: 5;
+    width: 70%;
+}
+.topline{
+    display: block;
+    position: relative;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: #3d535f;
+}
+.topline::after{
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 45px;
+    bottom: 10px;
+    background-color: #7f00ff;
+}
+h1{
+    display: block;
+    font-size: 6em;
+    font-weight: 900;
+    color: #3d535f;
+}
+.multiText{
+    color: #7f00ff;
+    text-transform: capitalize;
+}
+p{
+    display: block;
+    width: 90%;
+    font-size: 1.2em;
+    color:#3d535f ;
+
+}
+.btns{
+    width: 100%;
+    position: relative;
+    left: 150px;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #3d535f;
+    padding: 8px 14px;
+    margin: 40px 5px;
+    text-transform: capitalize;
+    border-radius: 30px;
+    width: 200px;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+button:hover{
+    background-color: #7f00ff;
+}
+.imgbox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.imgbox img{
+    position: relative;
+    height: 100%;
+    width: calc(130% - 80px);
+    top: -100px;
+    right: 50px;
+    animation: User 4s linear infinite;
+}
+@keyframes User{
+    50%{
+        right: 30px;
+        top: -90px;
+    }
+}
+.imgbox #photo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%) rotate(-35deg);
+    filter: saturate(200%);
+    animation: lines 4s linear infinite;
+}
+@keyframes lines{
+    50%{
+        top: 49%;
+        left: 51%;
+        width: 100%;
+    }
+}
+/* /* RESPONSIVE */
+
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navItems {
+        margin-top: 20px;
+    }
+    .cols {
+        max-width: 100%;
+    }
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        margin: 5px;
+    }
+    .imgbox img {
+        max-width: 100%;
+        right: 0;
+        top: 0;
+    }
+    
+    .imgbox #photo {
+        max-width: 100%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-35deg);
+    }
+}
